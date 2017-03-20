@@ -38,12 +38,12 @@
 
 2. Перенесем задачу на Hadoop. get_user_id.py может работать параллельно и независимо на разных данных - это маппер. uniq агрегирует сортированные записи - редьюсер. Сортировку обеспечит Hadoop, поэтому тот же результат можно получить так:
 
-        $ hadoop --config conf.empty
-            jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar
-            -files get_user_id.py
-            -input access.log
-            -output out/
-            -mapper ./get_user_id.py
+        $ hadoop --config conf.empty \
+            jar /opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/hadoop-streaming.jar \
+            -files get_user_id.py \
+            -input access.log \
+            -output out/ \
+            -mapper ./get_user_id.py \
             -reducer uniq
     Тут:
 
