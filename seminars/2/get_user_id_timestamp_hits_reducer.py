@@ -24,6 +24,7 @@ def main():
         hits += 1
         if (time>last_time+30*60)
             sessions+=1
+        last_time=time
 
     if current_key:
         print "%s\t%d\t%d" % (current_key, hits, sessions)
