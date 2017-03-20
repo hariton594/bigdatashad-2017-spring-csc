@@ -5,7 +5,7 @@ hadoop --config conf.empty jar /opt/hadoop/hadoop-streaming.jar \
     -D stream.num.map.output.key.fields=2 \
     -D mapred.text.key.partitioner.options=-k1,1 \
     -D mapreduce.job.reduces=3 \
-    -files get_user_id_timestamp_re.py get_user_id_timestamp_hits_reducer.py -input log_sessions/ -output out/ \
+    -files get_user_id_timestamp_re.py,get_user_id_timestamp_hits_reducer.py -input log_sessions/ -output out/ \
     -mapper ./get_user_id_timestamp_re.py \
     -reducer ./get_user_id_timestamp_hits_reducer.py \
     -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
