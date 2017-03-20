@@ -4,25 +4,29 @@
 import sys
 
 def main():
-    (current_key, hits) = (None,0)
+    (current_key, hits, sessions, last_time) = (None,0,0,0)
 
     for line in sys.stdin:
         line = line.strip()
         try:
-            key, value = line.split('\t', 1)
-            value = int(value)
+            key, time = line.split('\t', 1)
+            time = int(time)
         except ValueError:
-            (key, value) = line, 1
+            (key, time) = line, 1
 
         if current_key != key:
             if current_key:
-                print "%s\t%d" % (current_key, hits)
+                print "%s\t%d\t%d" % (current_key, hits, sessions)
             hits = 0
+            sessions=0
+            last_time=0
             current_key = key
-        hits += value
+        hits += 1
+        if (time>last_time+30*60)
+            sessions+=1
 
     if current_key:
-        print "%s\t%d" % (current_key, hits)
+        print "%s\t%d\t%d" % (current_key, hits, sessions)
 
 
 if __name__ == '__main__':
