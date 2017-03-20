@@ -1,3 +1,4 @@
+rm -rf out
 # secondary sort
 hadoop --config conf.empty jar /opt/hadoop/hadoop-streaming.jar \
     -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator \

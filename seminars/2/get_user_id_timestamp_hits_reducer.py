@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-# подсчет сессий и хитов
-
+# hits and sessions
 import sys
 
 def main():
@@ -22,7 +21,7 @@ def main():
             last_time=0
             current_key = key
         hits += 1
-        if (time>last_time+30*60)
+        if time>last_time+30*60:
             sessions+=1
         last_time=time
 
