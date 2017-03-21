@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 import re
 
@@ -11,7 +12,7 @@ def main():
             continue
         if match.group(6) != "200":
             continue
-        print match.group(6)
+        print match.group(4)
 
 
 if __name__ == '__main__':
