@@ -1,6 +1,6 @@
 rm -rf out_users_hits_sessions
 # secondary sort
-hadoop --conf conf.empty jar /opt/hadoop/hadoop-streaming.jar \
+hadoop --config conf.empty jar /opt/hadoop/hadoop-streaming.jar \
     -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator \
     -D mapred.text.key.comparator.options=-k1,2 \
     -D stream.num.map.output.key.fields=2 \
